@@ -60,6 +60,21 @@ const resolvers = {
     
       const token = signToken(user);
       return { token, user };
+    },
+    addWorkout: async (parent, args, context) => {
+      if (context.user) {
+        const workout = await Workout.create({ ...args, username: context.user.username });
+    
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { workouts: workout._id } },
+          { new: true }
+        );
+    
+        return workout;
+      }
+    
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 };

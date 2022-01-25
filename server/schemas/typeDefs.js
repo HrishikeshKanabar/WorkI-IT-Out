@@ -10,7 +10,7 @@ type User {
   username: String
   email: String
   friendCount: Int
-  workout: [Workout]
+  workouts: [Workout]
   friends: [User]
 }
 
@@ -46,6 +46,9 @@ type Auth {
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
+  addWorkout(workoutText: String!): Workout
+  addReaction(workoutId: ID!, reactionBody: String!): Workout
+  addFriend(friendId: ID!): User
 }
 `;
 

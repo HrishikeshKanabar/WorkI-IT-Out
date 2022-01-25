@@ -4,7 +4,7 @@ const dateFormat = require("../utils/dateFormat");
 
 const workoutSchema = new Schema(
   {
-    workoutDescription: {
+    workoutText: {
       type: String,
       required: "Share your Workout!",
       minlength: 1,
