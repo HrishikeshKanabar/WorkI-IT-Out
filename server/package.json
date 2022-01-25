@@ -1,0 +1,19 @@
+{
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "Server side code for work it out app",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "author": "code titans",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "faker": "^6.6.6",
+    "mongoose": "^6.1.8",
+    "nodemon": "^2.0.15"
+  }
+}
