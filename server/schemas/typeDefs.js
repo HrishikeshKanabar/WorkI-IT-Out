@@ -26,6 +26,22 @@ const typeDefs = gql`
   type Query {
     workouts(username: String): [Workout]
   }
+
+  type User {
+  _id: ID
+  username: String
+  email: String
+  friendCount: Int
+  workouts: [Workout]
+  friends: [User]
+}
+
+  type Query {
+  users: [User]
+  user(username: String!): User
+  workouts(username: String): [Workout]
+  workout(_id: ID!): Workout
+}
 `;
 
 // export the typeDefs
