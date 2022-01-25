@@ -3,6 +3,14 @@ const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
   Query: {
+    me: async (parent, args) => {
+      const userData = await User.findOne({})
+        .select('-__v -password')
+        .populate('thoughts')
+        .populate('friends');
+  
+      return userData;
+    },
     workouts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Workout.find(params).sort({ createdAt: -1 });
