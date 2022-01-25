@@ -2,9 +2,10 @@ const { User, Workout } = require('../models');
 
 const resolvers = {
   Query: {
-    workouts: async () => {
-      return Workout.find().sort({ createdAt: -1 });
-    }
+    workouts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Workout.find(params).sort({ createdAt: -1 });
+    },
   }
 };
   

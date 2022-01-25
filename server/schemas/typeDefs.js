@@ -16,7 +16,7 @@ type Workout {
 }
 
 type Query {
-        workouts:[Workout]
+    workouts(username: String): [Workout]
 }`;
 
     
