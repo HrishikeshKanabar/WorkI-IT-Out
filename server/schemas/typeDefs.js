@@ -7,20 +7,26 @@ const { gql } = require("apollo-server-express");
 // create our typeDefs
 const typeDefs = gql`
 
-type Workout {
+  type Workout {
     _id: ID
     workoutText: String
     createdAt: String
     username: String
     reactionCount: Int
-}
+    reactions: [Reaction]
+  }
 
-type Query {
+  type Reaction {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
+  }
+
+  type Query {
     workouts(username: String): [Workout]
-}`;
-
-    
-
+  }
+`;
 
 // export the typeDefs
 module.exports = typeDefs;
