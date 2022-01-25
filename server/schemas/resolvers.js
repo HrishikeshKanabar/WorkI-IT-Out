@@ -4,13 +4,17 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    me: async (parent, args) => {
-      const userData = await User.findOne({})
-        .select('-__v -password')
-        .populate('thoughts')
-        .populate('friends');
-  
-      return userData;
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('workouts')
+          .populate('friends');
+    
+        return userData;
+      }
+    
+      throw new AuthenticationError('Not logged in');
     },
     workouts: async (parent, { username }) => {
       const params = username ? { username } : {};
