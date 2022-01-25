@@ -1,9 +1,11 @@
+const { User, Workout } = require('../models');
+
 const resolvers = {
-    Query: {
-      helloWorld: () => {
-        return 'Hello world!';
-      }
+  Query: {
+    workouts: async () => {
+      return Workout.find().sort({ createdAt: -1 });
     }
-  };
+  }
+};
   
-  module.exports = resolvers;
+module.exports = resolvers;
