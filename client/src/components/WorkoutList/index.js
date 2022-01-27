@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const WorkoutList = ({ workouts, title }) => {
   if (!workouts.length) {
@@ -9,18 +10,26 @@ const WorkoutList = ({ workouts, title }) => {
     <div>
       <h3>{title}</h3>
       {workouts &&
-        workouts.map(workout => (
+        workouts.map((workout) => (
           <div key={workout._id} className="card mb-3">
             <p className="card-header">
-              {workout.username}
+              <Link
+                to={`/profile/${workout.username}`}
+                style={{ fontWeight: 700 }}
+                className="text-light"
+              >
+                {workout.username}
+              </Link>{" "}
               workout on {workout.createdAt}
             </p>
             <div className="card-body">
-              <p>{workout.workoutText}</p>
-              <p className="mb-0">
-                Reactions: {workout.reactionCount} || Click to{' '}
-                {workout.reactionCount ? 'see' : 'start'} the discussion!
-              </p>
+              <Link to={`/workout/${workout._id}`}>
+                <p>{workout.workoutText}</p>
+                <p className="mb-0">
+                  Reactions: {workout.reactionCount} || Click to{" "}
+                  {workout.reactionCount ? "see" : "start"} the discussion!
+                </p>
+              </Link>
             </div>
           </div>
         ))}
