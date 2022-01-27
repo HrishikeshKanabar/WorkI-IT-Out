@@ -37,3 +37,18 @@ export const ADD_FRIEND = gql`
     }
   }
 `;
+
+export const ADD_WORKOUT = gql`
+  mutation addWorkout($workoutText: String!) {
+    addWorkout(workoutText: $workoutText) {
+      _id
+      workoutText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+      }
+    }
+  }
+`;
