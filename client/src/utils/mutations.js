@@ -23,3 +23,47 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($id: ID!) {
+    addFriend(friendId: $id) {
+      _id
+      username
+      friendCount
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_WORKOUT = gql`
+  mutation addWorkout($workoutText: String!) {
+    addWorkout(workoutText: $workoutText) {
+      _id
+      workoutText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($workoutId: ID!, $reactionBody: String!) {
+    addReaction(workoutId: $workoutId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
