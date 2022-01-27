@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_WORKOUT } from '../utils/queries';
+import ReactionList from '../components/ReactionList';
 
 const SingleWorkout = (props) => {
   
@@ -31,6 +32,7 @@ if (loading) {
       <p>{workout.workoutText}</p>
     </div>
   </div>
+  {workout.reactionCount > 0 && <ReactionList reactions={workout.reactions} />}
 </div>
   );
 };
