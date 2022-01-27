@@ -52,3 +52,18 @@ export const ADD_WORKOUT = gql`
     }
   }
 `;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($workoutId: ID!, $reactionBody: String!) {
+    addReaction(workoutId: $workoutId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
