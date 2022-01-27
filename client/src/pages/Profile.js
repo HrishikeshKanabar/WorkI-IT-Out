@@ -8,6 +8,7 @@ import { ADD_FRIEND } from '../utils/mutations';
 
 import WorkoutList from '../components/WorkoutList';
 import FriendList from '../components/FriendList';
+import WorkoutForm from '../components/WorkoutForm';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -50,14 +51,14 @@ const Profile = () => {
   return (
     <div>
       <div className="flex-row mb-3">
-      <h2 className="bg-dark text-secondary p-3 display-inline-block">
-      Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-      </h2>
-      {userParam && (
-        <button className="btn ml-auto" onClick={handleClick}>
-          Add Friend
-        </button>
-      )}
+        <h2 className="bg-dark text-secondary p-3 display-inline-block">
+        Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+        </h2>
+        {userParam && (
+          <button className="btn ml-auto" onClick={handleClick}>
+            Add Friend
+          </button>
+        )}
       </div>
 
       <div className="flex-row justify-space-between mb-3">
@@ -65,14 +66,15 @@ const Profile = () => {
           <WorkoutList workouts={user.workouts} title={`${user.username}'s workouts...`} />
         </div>
         <div className="col-12 col-lg-3 mb-3">
-    <FriendList
-      username={user.username}
-      friendCount={user.friendCount}
-      friends={user.friends}
-    />
-  </div>
+          <FriendList
+            username={user.username}
+            friendCount={user.friendCount}
+            friends={user.friends}
+          />
+        </div>
 
       </div>
+      <div className="mb-3">{!userParam && <WorkoutForm />}</div>
     </div>
   );
 };
