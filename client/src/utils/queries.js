@@ -17,3 +17,21 @@ export const QUERY_WORKOUTS = gql`
     }
   }
 `;
+
+export const QUERY_WORKOUT = gql`
+  query workout($id: ID!) {
+    workout(_id: $id) {
+      _id
+      workoutText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
+      }
+    }
+  }
+`;
