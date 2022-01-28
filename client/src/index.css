@@ -3,6 +3,7 @@
   --secondary: #FF6464;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
+  --default-bg: #FFEEAD;
   --light: #e1f5f4;
   --dark: #041562;
   --error: rgb(228, 46, 1);
@@ -782,6 +783,10 @@ nav a:hover {
 
 .bg-secondary {
   background-color: var(--secondary);
+}
+
+.bg-default-bg {
+  background-color: var(--default-bg);
 }
 
 .bg-tertiary {
