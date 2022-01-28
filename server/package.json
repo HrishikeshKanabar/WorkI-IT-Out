@@ -1,0 +1,26 @@
+{
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "Server side code for work it out app",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seeds.js"
+  },
+  "author": "code titans",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^3.6.2",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "faker": "^6.6.6",
+    "graphql": "^16.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
