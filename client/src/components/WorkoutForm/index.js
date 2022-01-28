@@ -1,35 +1,65 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-
-import { QUERY_WORKOUTS, QUERY_ME } from '../../utils/queries';
+import { useMutation ,useQuery} from '@apollo/client';
+import { QUERY_WORKOUTS, QUERY_ME ,QUERY_USER} from '../../utils/queries';
 import { ADD_WORKOUT } from '../../utils/mutations';
+import { Redirect, useParams } from 'react-router-dom';
 
 const WorkoutForm = () => {
     const [workoutText, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
-
+    const { username: userParam } = useParams();
+    const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+      variables: { username: userParam }
+    });
     const [addWorkout, { error }] = useMutation(ADD_WORKOUT, {
-        update(cache, { data: { addWorkout } }) {
-            try {
+        update(cache, { data: { addWorkout:addWorkoutData} }) {
+           try {
                 // read what's currently in the cache
                 const { workouts } = cache.readQuery({ query: QUERY_WORKOUTS });
-            
+               console.log('line 16 workouts>>'+workouts);
                 // prepend the newest workout to the front of the array
                 cache.writeQuery({
                 query: QUERY_WORKOUTS,
-                data: { workouts: [addWorkout, ...workouts] }
+                data: { workouts:[addWorkoutData,...workouts] }
+               /* data: { workouts:addWorkoutData }*/
                 });
+
+               
             }
             catch (e) {
-                console.error(e);
+                console.error('error 27'+e);
             }
+            
 
+            console.log('addWorkoutData>> '+JSON.stringify(addWorkoutData));
             // update me object's cache, appending new workout to the end of the array
-            const { me } = cache.readQuery({ query: QUERY_ME });
-            cache.writeQuery({
-                query: QUERY_ME,
-                data: { me: { ...me, workouts: [...me.workouts, addWorkout] } }
-            });
+            //const data  = cache.readQuery({ query: QUERY_ME });
+            console.log('data>>> '+ data);
+            //const me  = cache.readQuery({ query: QUERY_ME });
+            if(!data){
+
+               /*cache.writeQuery({
+                    query: QUERY_ME,
+                    data: { me: {workouts: addWorkoutData } }
+                });*/
+               
+               cache.writeQuery({
+                    query: QUERY_ME,
+                    data: { me: { ...data.me, workouts: [...data.me.workouts, addWorkout] } }
+                });
+
+
+
+            }else{
+                /*cache.writeQuery({
+                    query: QUERY_ME,
+                    data: { me: { ...me, workouts: [...me.workouts, addWorkout] } }
+                });*/
+                console.log('ELSE PART');
+            }
+           
+            
+            
         }
     });
 
