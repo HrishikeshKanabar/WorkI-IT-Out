@@ -35,7 +35,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="bg-default-bg flex-column justify-flex-start min-100-vh">
+        <div className="bg-img bg-default-bg flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container bg-error">
   <Switch>

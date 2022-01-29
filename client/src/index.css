@@ -27,7 +27,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Poppins', monospace;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
@@ -41,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Karla', sans-serif;
+  font-family: "Supermercado One", sans-serif;
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
@@ -801,6 +801,14 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.bg-img{
+  background-image: url('./images/bg-back.jpg');
+  background-size: cover;
+}
 /* FLEX CONTENT */
 .flex-row {
   display: flex;
