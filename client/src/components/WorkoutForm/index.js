@@ -88,11 +88,12 @@ const WorkoutForm = () => {
             <textarea
             placeholder="Add a new workout..."
             value={workoutText}
-            className="form-input col-12 col-md-9"
+            className="form-input col-12 col-md-10"
             onChange={handleChange}
             ></textarea>
-            <button className="btn col-12 col-md-3" type="submit">
-                Submit
+            <button className="btn col-12 col-md-2" type="submit">
+                <img src={require('../../images/share.png')} alt=""/>
+                
             </button>
         </form>
     </div>

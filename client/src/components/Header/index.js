@@ -23,15 +23,16 @@ const Header = () => {
         <nav className="text-center">
   {Auth.loggedIn() ? (
     <>
-      <Link to="/profile">My Profile</Link>
-      <a href="/" onClick={logout}>
-        Logout
-      </a>
+    <Link to="/"><img src={require('../../images/homepage.png')} alt=""/></Link>
+    <Link to="/profile"><img src={require('../../images/user.png')} alt=""/></Link>
+    <a href="/" onClick={logout}>
+    <img src={require('../../images/logout.png')} alt=""/>
+    </a>
     </>
   ) : (
     <>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
+      <Link to="/login"><img src={require('../../images/login.png')} alt=""/></Link>
+      <Link to="/signup"><img src={require('../../images/signup.png')} alt=""/></Link>
     </>
   )}
 </nav>

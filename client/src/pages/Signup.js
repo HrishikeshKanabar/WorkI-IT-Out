@@ -72,7 +72,7 @@ const handleFormSubmit = async event => {
                 onChange={handleChange}
               />
               <button className="btn d-block w-100" type="submit">
-                Submit
+                SIGNUP
               </button>
             </form>
             {error && <div>Sign up failed</div>}

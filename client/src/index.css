@@ -782,6 +782,10 @@ nav a:hover {
 }
 
 /* BACKGROUND UTILS */
+
+.bg-super-dark {
+  background-color: var(--super-dark);
+}
 .bg-linear{
   background: linear-gradient(#e66465, #9198e5);
 }

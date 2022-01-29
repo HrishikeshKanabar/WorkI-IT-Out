@@ -20,14 +20,15 @@ const WorkoutList = ({ workouts, title }) => {
               >
                 {workout.username}
               </Link>{" "}
-              workout on {workout.createdAt}
+            </p>
+            <p className="card-header bg-super-dark">
+            <img src={require('../../images/new-post.png')} alt=""/> {workout.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/workout/${workout._id}`}>
                 <p>{workout.workoutText}</p>
                 <p className="mb-0">
-                  Reactions: {workout.reactionCount} || Click to{" "}
-                  {workout.reactionCount ? "see" : "start"} the discussion!
+                <img src={require('../../images/quotes.png')} alt=""/> Comments: {workout.reactionCount}
                 </p>
               </Link>
             </div>
