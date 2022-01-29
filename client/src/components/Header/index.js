@@ -8,11 +8,17 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
+    <header className="bg-linear mb-4 py-2 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
+      <div className="flex-row">
+      <Link to="/">
+      <img src={require('../../images/favicon.png')} alt=""/>
+      </Link>
         <Link to="/">
-          <h1>WorkI It Out</h1>
+          <h1>&nbsp; WorkI It Out</h1>
         </Link>
+      </div>
+      
 
         <nav className="text-center">
   {Auth.loggedIn() ? (

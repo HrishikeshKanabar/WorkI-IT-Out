@@ -8,7 +8,7 @@ const WorkoutList = ({ workouts, title }) => {
 
   return (
     <div>
-      <h3 className="text-secondary">{title}</h3>
+      <h3 className="text-secondary text-center">{title}</h3>
       {workouts &&
         workouts.map((workout) => (
           <div key={workout._id} className="card mb-3">

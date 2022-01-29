@@ -6,6 +6,7 @@ import { QUERY_WORKOUTS, QUERY_ME_BASIC } from '../utils/queries';
 import WorkoutList from '../components/WorkoutList';
 import FriendList from '../components/FriendList';
 import WorkoutForm from '../components/WorkoutForm';
+import Login from "./Login";
 
 const Home = () => {
   // use useQuery hook to make query request
@@ -21,29 +22,34 @@ const Home = () => {
 
   return (
     <main>
+    {!loggedIn ?
+      <Login />
+      :
       <div className="flex-row justify-space-between">
-        {loggedIn && (
-        <div className="col-12 mb-3">
-          <WorkoutForm />
-        </div>
-        )}
-        <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <WorkoutList workouts={workouts} title="Enjoy Workouts feed" />
-          )}
-        </div>
-        {loggedIn && userData ? (
-          <div className="col-12 col-lg-3 mb-3">
-            <FriendList
-              username={userData.me.username}
-              friendCount={userData.me.friendCount}
-              friends={userData.me.friends}
-            />
-          </div>
-        ) : null}
+      {loggedIn && (
+      <div className="col-12 mb-3">
+        <WorkoutForm />
       </div>
+      )}
+      <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <WorkoutList workouts={workouts} title="Enjoy The Workouts" />
+        )}
+      </div>
+      {loggedIn && userData ? (
+        <div className="col-12 col-lg-3 mb-3">
+          <FriendList
+            username={userData.me.username}
+            friendCount={userData.me.friendCount}
+            friends={userData.me.friends}
+          />
+        </div>
+      ) : null}
+    </div>
+    }
+      
     </main>
   );
 };

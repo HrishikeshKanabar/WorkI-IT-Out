@@ -777,6 +777,9 @@ nav a:hover {
 }
 
 /* BACKGROUND UTILS */
+.bg-linear{
+  background: linear-gradient(#e66465, #9198e5);
+}
 .bg-primary {
   background-color: var(--primary);
 }
