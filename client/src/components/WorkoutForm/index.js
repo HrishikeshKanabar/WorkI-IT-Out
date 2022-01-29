@@ -36,25 +36,12 @@ const WorkoutForm = () => {
             //const data  = cache.readQuery({ query: QUERY_ME });
             console.log('data>>> '+ data);
             //const me  = cache.readQuery({ query: QUERY_ME });
-            if(!data){
-
-               /*cache.writeQuery({
-                    query: QUERY_ME,
-                    data: { me: {workouts: addWorkoutData } }
-                });*/
-               
+            if(data){
                cache.writeQuery({
                     query: QUERY_ME,
                     data: { me: { ...data.me, workouts: [...data.me.workouts, addWorkout] } }
                 });
-
-
-
             }else{
-                /*cache.writeQuery({
-                    query: QUERY_ME,
-                    data: { me: { ...me, workouts: [...me.workouts, addWorkout] } }
-                });*/
                 console.log('ELSE PART');
             }
            

@@ -6,6 +6,7 @@
   --default-bg: #FFEEAD;
   --light: #e1f5f4;
   --dark: #041562;
+  --super-dark: #072227;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -772,6 +773,10 @@ nav a:hover {
   color: var(--dark);
 }
 
+.text-super-dark {
+  color: var(--super-dark);
+}
+
 .text-error {
   color: var(--error);
 }
@@ -1262,5 +1267,12 @@ nav a:hover {
 
   .align-center-xl {
     align-items: center;
+  }
+
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin: 5px 0;
+    line-height: 1.25;
   }
 }

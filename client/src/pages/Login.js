@@ -34,6 +34,10 @@ const handleFormSubmit = async event => {
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
+
+      <h2 className="text-center font-poppins text-super-dark">CONNECT WITH YOUR WORKOUT BUDDIES</h2>
+      <h4 className="text-center font-poppins text-super-dark">Share your workout routines</h4>
+      <br/>
         <div className="card">
           <h4 className="card-header">Login</h4>
           <div className="card-body">
