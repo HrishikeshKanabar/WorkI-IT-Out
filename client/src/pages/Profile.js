@@ -19,7 +19,7 @@ const Profile = () => {
   
   const user = data?.me || data?.user || {};
 
-  const [friendText, setFriendText] = useState("Add Friend")
+  const [friendText, setFriendText] = useState("Follow")
   const [addFriend] = useMutation(ADD_FRIEND);
 
   // redirect to personal profile page if username is the logged-in user's
@@ -44,7 +44,7 @@ const Profile = () => {
       await addFriend({
         variables: { id: user._id }
       });
-      setFriendText("Friend Added")
+      setFriendText("Following")
     } catch (e) {
       console.error(e);
     }
