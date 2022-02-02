@@ -1,10 +1,12 @@
 :root {
-  --primary: #497573;
-  --secondary: #99f7f2;
+  --primary: #FFE162;
+  --secondary: #FF6464;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
+  --default-bg: #FFEEAD;
   --light: #e1f5f4;
-  --dark: #6c7575;
+  --dark: #041562;
+  --super-dark: #072227;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -26,7 +28,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Poppins', monospace;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
@@ -40,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Karla', sans-serif;
+  font-family: "Supermercado One", sans-serif;
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
@@ -771,17 +773,32 @@ nav a:hover {
   color: var(--dark);
 }
 
+.text-super-dark {
+  color: var(--super-dark);
+}
+
 .text-error {
   color: var(--error);
 }
 
 /* BACKGROUND UTILS */
+
+.bg-super-dark {
+  background-color: var(--super-dark);
+}
+.bg-linear{
+  background: linear-gradient(#e66465, #9198e5);
+}
 .bg-primary {
   background-color: var(--primary);
 }
 
 .bg-secondary {
   background-color: var(--secondary);
+}
+
+.bg-default-bg {
+  background-color: var(--default-bg);
 }
 
 .bg-tertiary {
@@ -796,6 +813,14 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.bg-img{
+  background-image: url('./images/bg-back.jpg');
+  background-size: cover;
+}
 /* FLEX CONTENT */
 .flex-row {
   display: flex;
@@ -1246,5 +1271,12 @@ nav a:hover {
 
   .align-center-xl {
     align-items: center;
+  }
+
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin: 5px 0;
+    line-height: 1.25;
   }
 }

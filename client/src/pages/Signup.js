@@ -72,8 +72,11 @@ const handleFormSubmit = async event => {
                 onChange={handleChange}
               />
               <button className="btn d-block w-100" type="submit">
-                Submit
+                SIGNUP
               </button>
+              <p className="text-center">Already have an account and want to login. <button className="btn ">
+              <a href={`/login`}>login Here</a>
+              </button>  </p>
             </form>
             {error && <div>Sign up failed</div>}
           </div>
