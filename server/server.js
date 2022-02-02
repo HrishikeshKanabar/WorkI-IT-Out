@@ -1,5 +1,6 @@
 const express = require('express');
 // import ApolloServer
+// Heroku deployment
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
