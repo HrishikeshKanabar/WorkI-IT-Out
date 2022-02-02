@@ -34,23 +34,23 @@ https://worki-it-out.herokuapp.com/
 
 Login
 :--------------------------------:|
-![Home Page]()
+![Home Page](https://github.com/HrishikeshKanabar/WorkI-IT-Out/blob/main/images/signup.JPG)
 
 Sign up
 :--------------------------------:|
-![Sign up]()
+![Sign up](https://github.com/HrishikeshKanabar/WorkI-IT-Out/blob/main/images/signup.JPG)
 
 Home page
 :--------------------------------:|
-![Home Page]()
+![Home Page](https://github.com/HrishikeshKanabar/WorkI-IT-Out/blob/main/images/Homepage.JPG)
 
 Profile page
 :--------------------------------:|
-![Profile page]()
+![Profile page](https://github.com/HrishikeshKanabar/WorkI-IT-Out/blob/main/images/Profilepage.JPG)
 
 Comments
 :--------------------------------:|
-![Comments]()
+![Comments](https://github.com/HrishikeshKanabar/WorkI-IT-Out/blob/main/images/Commenst.JPG)
 
 
 ## Technology used
