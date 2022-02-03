@@ -1,15 +1,5 @@
 # WorkI-IT-Out
 
-## Authors
-
-Hrishikesh Kanabar (hrishikesh_kanabar@yahoo.com)
-
-Daniel Pandolfo (dan.pandolfo@gmail.com)
-
-Sehajpreet Singh (sehajmagan@gmail.com)
-
-Nikhil Nikhil (nikhil.naren84@gmail.com)
-
 ## Description
 
 Designed and develop an app to connect with your workout buddies and share your Routines or any workouts.
@@ -107,6 +97,16 @@ Step-4 Run npm run develop.
 Step-5 Browser should automatically open on URL : localhost:3000.
 
 Step-6  localhost:3001/graphql playgroud opens backend to test.
+
+## Authors
+
+Hrishikesh Kanabar (hrishikesh_kanabar@yahoo.com)
+
+Daniel Pandolfo (dan.pandolfo@gmail.com)
+
+Sehajpreet Singh (sehajmagan@gmail.com)
+
+Nikhil Nikhil (nikhil.naren84@gmail.com)
 
 
 
