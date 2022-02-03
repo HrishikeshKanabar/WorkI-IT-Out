@@ -10,6 +10,12 @@ Sehajpreet Singh (sehajmagan@gmail.com)
 
 Nikhil Nikhil (nikhil.naren84@gmail.com)
 
+## Description
+
+Designed and develop an app to connect with your workout buddies and share your Routines or any workouts.
+
+We wanted to create an app for recreational purposes, so you could connect with your community gym buddies or your workout buddies that you meet anywhere in the world.
+
 ## View Demo
 
 https://worki-it-out.herokuapp.com/
