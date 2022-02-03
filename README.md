@@ -20,6 +20,10 @@ We wanted to create an app for recreational purposes, so you could connect with 
 
 https://worki-it-out.herokuapp.com/
 
+## Get more info
+
+https://docs.google.com/presentation/d/1-iqt77LQ8ELQel3FMi-49DwduwTjxIn-GtrQtP7GsWk/edit#slide=id.g1124eacd703_0_5
+
 ## Web Application (how to use)
 
 1.) Start with Signup by using username, email and pasword.
